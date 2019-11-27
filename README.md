@@ -1,4 +1,4 @@
-Töötab Windows 10 Firefox 70.0.1 ja Opera 65.0.3467.48 brauseriga.
+Töötab Windows 10 Firefox 70.0.1 brauseriga.
 Tehtud Egerti näidistöö baasil https://github.com/egertpiksar/ReactJS
 
 Enne käivitamist:

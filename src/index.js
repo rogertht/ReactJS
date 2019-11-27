@@ -62,7 +62,11 @@ class Application extends React.Component {
     const zoom = this.state.zoom;
 
     const content = this.state.checked 
-      ? <div className="pin2"></div>
+      ? <div className="center-screen">
+          <div className="marker"></div>
+          <div className="pin2"></div>      
+        </div>
+      
       : null;
 
     return (
@@ -71,10 +75,7 @@ class Application extends React.Component {
           <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
         </div>
         <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
-        <div className="center-screen">
-            <div className="marker"></div>
-            { content }
-        </div>
+        { content }        
 
         <div className="inline-block absolute top right mt12 mr12 bg-darken75 color-white z1 py6 px12">
           <div>
