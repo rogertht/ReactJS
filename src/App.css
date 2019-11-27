@@ -35,4 +35,14 @@
     border: 10px solid transparent;
     border-top: 17px solid #007991;
 }
-  
+
+
+.toggle_pin_button {
+
+    color: white;
+    padding: 4px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

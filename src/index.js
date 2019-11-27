@@ -12,8 +12,10 @@ class Application extends React.Component {
     this.state = {
       lng: 24.7731,
       lat: 59.4389,
-      zoom: 12
+      zoom: 12,
+      checked: true
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -37,18 +39,50 @@ class Application extends React.Component {
     });
   }
 
+  handleChange() {
+    this.setState({
+      checked: !this.state.checked
+    })
+  }
+
   render() {
-    const { lng, lat, zoom } = this.state;
+    
+    const lng = this.state.lng;
+    const lat = this.state.lat;
+    const zoom = this.state.zoom;
+
+    const content = this.state.checked 
+      ? <div className="pin2"></div>
+      : null;
 
     return (
       <div>
-        <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
+        <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12">
           <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
         </div>
         <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
         <div className="center-screen">
             <div className="marker"></div>
-            <div className="pin2"></div>
+            { content }
+        </div>
+
+        <div className="inline-block absolute top right mt12 mr12 bg-darken75 color-white z1 py6 px12">
+          <div>
+            <p>Settings:</p>
+            
+            <div className="toggle_pin_button">
+            <label>
+              <input type="checkbox"
+              defaultChecked={true}    
+              checked={ this.state.checked } 
+              onChange={ this.handleChange }
+              />
+              Toggle pin
+            </label>
+            </div>
+          </div>
+
+          
         </div>
         
       </div>
