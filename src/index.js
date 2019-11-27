@@ -13,9 +13,11 @@ class Application extends React.Component {
       lng: 24.7731,
       lat: 59.4389,
       zoom: 12,
-      checked: true
+      checked: true,
+      history: []
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +45,14 @@ class Application extends React.Component {
     this.setState({
       checked: !this.state.checked
     })
+  }
+
+  handleSave() {
+    this.setState(
+    {
+      history: this.state.history.concat(
+        this.state.lat + " | " + this.state.lng)
+    });
   }
 
   render() {
@@ -80,10 +90,31 @@ class Application extends React.Component {
               Toggle pin
             </label>
             </div>
-          </div>
 
-          
+            <div>
+            <p>Actions:</p>
+            <button className="save_point_button" onClick={ this.handleSave }>            
+              Save point
+            </button>
+            </div>
+          </div>         
         </div>
+
+        <div className="inline-block absolute bottom left mb30 ml12 bg-darken75 color-white z1 py6 px12">
+          <p>Saved points:</p>  
+          <ul>
+              {
+                this.state.history.map(function(name, index)
+                {
+                  return(
+                          <li key={index}>
+                            <p> {name} </p>
+                          </li>
+                        );
+                })
+              }
+          </ul>
+        </div>               
         
       </div>
     );

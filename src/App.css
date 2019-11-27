@@ -1,4 +1,5 @@
-.center-screen{
+.center-screen
+{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -6,17 +7,17 @@
     text-align: center;
     min-height: 100vh;
 }
-
-.marker{
+.marker
+{
     margin-top: -30px;
     z-index: 9999;
     height: 8px;
     width: 8px;
     border-radius: 50%;
     background-color: white;
-  }
-
-.pin2 {
+}
+.pin2
+{
     margin-top: -30px;
     position: absolute;
     border-radius: 50%;
@@ -24,8 +25,8 @@
     width: 10px;
     height: 10px;
 }
-
-.pin2::after {
+.pin2::after
+{
     position: absolute;
     content: '';
     width: 0px;
@@ -35,12 +36,21 @@
     border: 10px solid transparent;
     border-top: 17px solid #007991;
 }
-
-
-.toggle_pin_button {
-
+.toggle_pin_button
+{
     color: white;
     padding: 4px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.save_point_button
+{
+    background-color: #4CAF50; /* Green */
+    border: solid black;
+    color: white;
+    padding: 4px 18px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
