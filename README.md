@@ -1,3 +1,12 @@
+Töötab Windows 10 Firefox 70.0.1 ja Opera 65.0.3467.48 brauseriga.
+Tehtud Egerti näidistöö baasil https://github.com/egertpiksar/ReactJS
+
+Enne käivitamist:
+npm install
+Käivitamiseks:
+yarn start
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

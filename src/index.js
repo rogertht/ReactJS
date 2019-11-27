@@ -51,7 +51,7 @@ class Application extends React.Component {
     this.setState(
     {
       history: this.state.history.concat(
-        this.state.lat + " | " + this.state.lng)
+        '\n' + this.state.lat + " " + this.state.lng)
     });
   }
 
@@ -95,6 +95,16 @@ class Application extends React.Component {
             <p>Actions:</p>
             <button className="save_point_button" onClick={ this.handleSave }>            
               Save point
+            </button>
+            
+            <br/>
+            
+            <button className="save_point_button" 
+              onClick=
+              { 
+                navigator.clipboard.writeText(this.state.history)
+              }>            
+              Copy saved
             </button>
             </div>
           </div>         
